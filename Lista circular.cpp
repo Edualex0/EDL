@@ -72,6 +72,23 @@ void exibir(Descritor* l){
     printf("\n");
 }
 
+NoLSEC* buscar (Descritor * l, int valor){
+    NoLSEC* aux = l -> inicio;
+    if(isEmpty(l)== TRUE){
+        return NULL;
+    }
+    else{
+        aux = l -> inicio;
+        for (int i = 1; i <= l -> qtd; i++){
+            if (aux -> info == valor){
+                return aux;
+            }
+            aux = aux -> prox;
+        }
+        return NULL;
+    }
+}
+
 int main() {
     Descritor* lista;
     lista = criarLista();
